@@ -1,11 +1,14 @@
 import React from "react";
 import "../styles/layout.css";
 import { Outlet, Link } from "react-router-dom";
+import Header from "../components/Header";
 
 function Layout(props) {
   return (
     <div className="layout">
-      <nav>
+      <Header />
+      <Outlet />
+      {/* <nav>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -17,9 +20,9 @@ function Layout(props) {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
-      <Outlet />
+      {/* <Outlet /> */}
     </div>
   );
 }
