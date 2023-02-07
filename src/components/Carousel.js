@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/carousel.css";
 import p1 from "../assets/image-product-1.jpg";
 import p2 from "../assets/image-product-2.jpg";
@@ -9,6 +9,13 @@ import previous from "../assets/icon-previous.svg";
 function Carousel(props) {
   const productImgs = [p1, p2, p3, p4];
   const [currImg, setCurrImg] = useState(0);
+
+  const ticktock = () =>
+    setTimeout(() => setCurrImg((curr) => (curr === 3 ? 0 : curr + 1)), 2000);
+
+  useEffect(() => {
+    ticktock();
+  }, [currImg]);
 
   const showNext = (current) => {
     if (current === 3) {
