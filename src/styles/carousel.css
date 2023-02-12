@@ -19,6 +19,7 @@
     align-items: center;
     height: 1rem;
     width: 1rem;
+    cursor: pointer;
 }
 
 .next > img {
@@ -37,6 +38,7 @@
     align-items: center;
     height: 1rem;
     width: 1rem;
+    cursor: pointer;
 }
 
 .previous > img {

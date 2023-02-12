@@ -2,11 +2,13 @@ import React from "react";
 import "../styles/layout.css";
 import { Outlet, Link } from "react-router-dom";
 import Header from "../components/Header";
+import Cart from "../components/Cart";
 
-function Layout(props) {
+function Layout({ cart, setCart }) {
   return (
     <div className="layout">
-      <Header />
+      <Header cart={cart} setCart={setCart} />
+      {cart.visible ? <Cart cart={cart} /> : ""}
       <Outlet />
       {/* <nav>
         <ul>
