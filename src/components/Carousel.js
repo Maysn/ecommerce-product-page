@@ -10,11 +10,11 @@ function Carousel(props) {
   const productImgs = [p1, p2, p3, p4];
   const [currImg, setCurrImg] = useState(0);
 
-  const ticktock = () =>
+  const imgAutoSwitch = () =>
     setTimeout(() => setCurrImg((curr) => (curr === 3 ? 0 : curr + 1)), 2000);
 
   useEffect(() => {
-    ticktock();
+    imgAutoSwitch();
   }, [currImg]);
 
   const showNext = (current) => {

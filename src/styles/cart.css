@@ -1,5 +1,6 @@
 .cart {
     position: absolute;
+    overflow-y: auto;
     top: 31%;
     left: 50%;
     transform: translate(-50%, -50%);

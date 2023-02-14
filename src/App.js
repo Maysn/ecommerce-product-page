@@ -16,8 +16,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout cart={cart} setCart={setCart} />}>
-            <Route index element={<Home cart={cart} setCart={setCart} />} />
-            <Route path="collection" element={<Collection />} />
+            <Route element={<Home cart={cart} setCart={setCart} />} />
+            <Route
+              index
+              element={<Collection cart={cart} setCart={setCart} />}
+            />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
