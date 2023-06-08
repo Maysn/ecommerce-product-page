@@ -6,15 +6,20 @@ import p3 from "../assets/image-product-3.jpg";
 import p4 from "../assets/image-product-4.jpg";
 import next from "../assets/icon-next.svg";
 import previous from "../assets/icon-previous.svg";
+
+const CAROUSEL_TICKER = 3000;
 function Carousel(props) {
   const productImgs = [p1, p2, p3, p4];
   const [currImg, setCurrImg] = useState(0);
 
-  const imgAutoSwitch = () =>
-    setTimeout(() => setCurrImg((curr) => (curr === 3 ? 0 : curr + 1)), 2000);
-
   useEffect(() => {
-    imgAutoSwitch();
+    const interval = setTimeout(() => {
+      setCurrImg((curr) => (curr === 3 ? 0 : curr + 1));
+    }, CAROUSEL_TICKER);
+
+    return () => {
+      clearTimeout(interval);
+    };
   }, [currImg]);
 
   const showNext = (current) => {
