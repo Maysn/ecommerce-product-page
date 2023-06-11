@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/StoreItem.css";
 import { formatCurrency } from "../utilities/formatCurrency";
 import cartIcon from "../assets/icon-cart.svg";
 import iconPlus from "../assets/icon-plus.svg";
@@ -15,8 +16,10 @@ function StoreItem({
 }) {
   const quantity = 0;
   return (
-    <div className="item" style={{ marginBottom: "3rem" }}>
-      <img src={images[0]} style={{ height: "200px", width: "100%" }} alt="" />
+    <div className="item">
+      <div className="item-image">
+        <img src={images[0]} alt="item's image" />
+      </div>
       <div className="item-body">
         {/* <div className="item-title">
           <div
@@ -33,58 +36,28 @@ function StoreItem({
         <div className="item-info">
           <p>{brand}</p>
           <h3>{title}</h3>
-          <p>{description}</p>
         </div>
-        <div
-          className="item-price"
-          style={{ display: "flex", justifyContent: "space-around" }}
-        >
+        <div className="item-price">
           <span>
             {formatCurrency(priceAfterDiscount(price, discountPercentage))}
           </span>
           <span>{`${Math.round(discountPercentage)}%`}</span>
-          <span style={{ color: "GrayText", textDecoration: "line-through" }}>
-            {formatCurrency(price)}
-          </span>
+          <span className="og-price">{formatCurrency(price)}</span>
         </div>
-        <div
-          className="item-buttons"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <div
-            className="quantity"
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-around",
-            }}
-          >
+        <div className="item-buttons">
+          <div className="quantity">
             <span>
-              <img src={iconMinus} alt="" />
+              <img src={iconMinus} alt="remove one unit" />
             </span>
             {`${quantity} in cart`}
             <span>
-              <img src={iconPlus} alt="" />
+              <img src={iconPlus} alt="add one unit" />
             </span>
           </div>
-          <div
-            className="remove-from-cart"
-            style={{
-              width: "100%",
-              textAlign: "center",
-              backgroundColor: "grey",
-              fontSize: "1rem",
-              marginTop: "1rem",
-              padding: "1rem",
-            }}
-          >
+          <div className="remove-from-cart">
             {" "}
             <span>
-              <img src={cartIcon} alt="" />
+              <img src={cartIcon} alt="cart icon" />
             </span>
             Add to cart
           </div>
