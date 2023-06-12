@@ -1,0 +1,20 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.3rem;
+}
+
+.avatar, .cart {
+    height: auto;
+    width: 20px;
+}
+
+.cart-img {
+    margin-right: 1rem;
+}
+
+.hamburger {
+    margin-right: 1rem;
+    position: relative;
+    z-index: 13;
+}

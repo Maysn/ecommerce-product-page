@@ -1,0 +1,12 @@
+.layout {
+    height: 100%; 
+    bottom: 0; 
+    left: 0;
+    right: 0;
+    z-index: 2; 
+    position: fixed;
+    padding-top: 60px; 
+    background-color: var(--Very-dark-blue);
+    /* background-image: repeating-linear-gradient(45deg, black, black 19px, purple 20px, purple 0px); */
+    opacity: .7;
+}
