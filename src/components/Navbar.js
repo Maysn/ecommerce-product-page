@@ -1,33 +1,20 @@
 import React, { useState } from "react";
-import "../styles/nav.css";
+import "../styles/Nav.css";
 import hamburger from "../assets/icon-menu.svg";
 import hamburgerClose from "../assets/icon-close.svg";
 import logo from "../assets/logo.svg";
 import cartIcon from "../assets/icon-cart.svg";
 import avatar from "../assets/image-avatar.png";
-import { Link } from "react-router-dom";
-function Navbar({}) {
-  const [open, setOpen] = useState(false);
-
+import DesktopLinks from "./DesktopLinks";
+function Navbar({ isOpen, setIsOpen }) {
   return (
     <nav className="nav">
-      <div className="left-side">
-        <span>
-          <Link to="/">Home</Link>
-        </span>
-        <span>
-          <Link to="collection">Collection</Link>
-        </span>
-        <span>
-          <Link to="store">Store</Link>
-        </span>
-      </div>
-      {/* <div className="left-side">
+      <div className="nav-left-side">
         <img
-          src={open ? hamburgerClose : hamburger}
+          src={isOpen ? hamburgerClose : hamburger}
           alt="show mobile menu"
           className="hamburger"
-          onClick={() => setOpen((curr) => !curr)}
+          onClick={() => setIsOpen((isOpen) => !isOpen)}
         />
         <img
           style={{ backgroundColor: "white" }}
@@ -35,7 +22,8 @@ function Navbar({}) {
           alt="Logo"
           className="logo"
         />
-      </div> */}
+      </div>
+      <DesktopLinks />
       <div className="right-side">
         <img
           src={cartIcon}
