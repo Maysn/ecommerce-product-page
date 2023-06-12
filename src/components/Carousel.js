@@ -56,9 +56,6 @@ export function Carousel(props) {
           <img src={previous} alt="previous image" />
         </span>
       </div>
-      <div className="carousel-description">
-        <p>{carouselData?.[currItem].description}</p>
-      </div>
     </div>
 
     // <div className="product-preview">
