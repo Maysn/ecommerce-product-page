@@ -12,6 +12,11 @@ function Cart() {
       {cart.map((item) => (
         <CartItem key={item.id} {...item} />
       ))}
+      {cart.length > 0 ? (
+        <div className="checkout">Checkout</div>
+      ) : (
+        <p className="empty_card">Your cart is empty</p>
+      )}
     </div>
   );
 }

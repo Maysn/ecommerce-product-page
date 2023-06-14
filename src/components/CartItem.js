@@ -32,9 +32,12 @@ function CartItem({ id, quantity }) {
             style={{ height: "47px", width: "47px" }}
           />
         </div>
-        <div className="title_price">
+        <div className="item_price">
           <p>{ITEM.title}</p>
-          <span>{`${PRICE} x ${quantity} ${TOTAL_PRICE}`}</span>
+          <span>
+            {`${PRICE} x ${quantity} `}{" "}
+            <span className="total_price">{TOTAL_PRICE}</span>
+          </span>
         </div>
       </div>
       <span className="remove_item" onClick={() => removeCartItem(id)}>

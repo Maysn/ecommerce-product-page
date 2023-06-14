@@ -8,5 +8,6 @@
     padding-top: 60px; 
     background-color: var(--Very-dark-blue);
     /* background-image: repeating-linear-gradient(45deg, black, black 19px, purple 20px, purple 0px); */
-    opacity: .7;
+    opacity: 0;
+    transition: opacity 1.3s ease-in-out;
 }
