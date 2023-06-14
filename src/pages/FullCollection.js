@@ -6,7 +6,7 @@ function FullCollection() {
   const productsData = useProductsData();
   console.log(productsData);
 
-  return <Collection list={productsData} />;
+  return productsData ? <Collection list={productsData} /> : "";
 }
 
 export default FullCollection;
