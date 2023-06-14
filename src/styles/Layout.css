@@ -3,7 +3,7 @@
     bottom: 0; 
     left: 0;
     right: 0;
-    z-index: 2; 
+    z-index: 12; 
     position: fixed;
     padding-top: 60px; 
     background-color: var(--Very-dark-blue);

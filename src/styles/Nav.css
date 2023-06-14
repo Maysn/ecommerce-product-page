@@ -18,3 +18,23 @@
     position: relative;
     z-index: 13;
 }
+.right-side {
+    display: flex;
+}
+.cart_icon {
+    position: relative;
+}
+.cart_quantity {
+    position: absolute;
+    top: -7px;
+    right: 9px;
+    background-color: var(--Orange);
+    height: 0.9rem;
+    width: 1.35rem;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Light-grayish-blue);
+    font-size: .75rem;
+}

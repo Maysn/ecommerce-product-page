@@ -6,15 +6,17 @@ import logo from "../assets/logo.svg";
 import cartIcon from "../assets/icon-cart.svg";
 import avatar from "../assets/image-avatar.png";
 import DesktopLinks from "./DesktopLinks";
-function Navbar({ isOpen, setIsOpen }) {
+import { useShoppingCart } from "../context/ShoppingCartContext";
+function Navbar({ toggleMenu, setToggleMenu }) {
+  const { toggleCart, cartQuantity } = useShoppingCart();
   return (
     <nav className="nav">
       <div className="nav-left-side">
         <img
-          src={isOpen ? hamburgerClose : hamburger}
+          src={toggleMenu ? hamburgerClose : hamburger}
           alt="show mobile menu"
           className="hamburger"
-          onClick={() => setIsOpen((isOpen) => !isOpen)}
+          onClick={() => setToggleMenu((curr) => !curr)}
         />
         <img
           style={{ backgroundColor: "white" }}
@@ -25,12 +27,17 @@ function Navbar({ isOpen, setIsOpen }) {
       </div>
       <DesktopLinks />
       <div className="right-side">
-        <img
-          src={cartIcon}
-          alt="user cart"
-          className="cart-img"
-          // onClick={cartToggle}
-        />
+        <div className="cart_icon">
+          <img
+            src={cartIcon}
+            alt="user cart"
+            className="cart-img"
+            onClick={toggleCart}
+          />
+          {cartQuantity > 0 && (
+            <div className="cart_quantity">{cartQuantity}</div>
+          )}
+        </div>
         <img src={avatar} alt="user avatar" className="avatar" />
       </div>
     </nav>

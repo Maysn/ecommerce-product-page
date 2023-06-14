@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/MobileLinks.css";
-function MobileLinks({ isOpen, setIsOpen }) {
+function MobileLinks({ toggleMenu, setToggleMenu }) {
   return (
     <div
       className="mobile-links"
-      style={{ width: isOpen ? "70%" : "0" }}
-      onClick={() => setIsOpen((open) => !open)}
+      style={{ width: toggleMenu ? "70%" : "0" }}
+      onClick={() => setToggleMenu((open) => !open)}
     >
       <span>
         <Link to="/">Home</Link>
