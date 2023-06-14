@@ -2,7 +2,7 @@ import React from "react";
 import { useProductsData } from "../context/ProductsDataContext";
 import Collection from "../components/Collection";
 
-function FullCollection(props) {
+function FullCollection() {
   const productsData = useProductsData();
   console.log(productsData);
 

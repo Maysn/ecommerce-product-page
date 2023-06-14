@@ -1,12 +1,15 @@
 import React from "react";
 import "../styles/Layout.css";
 
-function Layout({ isOpen, setIsOpen }) {
+function Layout({ toggleMenu, setToggleMenu }) {
   return (
     <div
       className="layout"
-      style={{ width: isOpen ? "100%" : "0" }}
-      onClick={() => setIsOpen((open) => !open)}
+      style={{
+        width: toggleMenu ? "100%" : "0",
+        opacity: toggleMenu ? ".7" : "0",
+      }}
+      onClick={() => setToggleMenu((open) => !open)}
     ></div>
   );
 }
