@@ -6,11 +6,17 @@ import Categories from "../components/Categories";
 function Home({}) {
   const products = useProductsData();
   return (
-    <div className="home">
-      <Carousel />
-      {/* <Categories /> */}
-      {console.log(products)}
-    </div>
+    <>
+      {products ? (
+        <div className="home">
+          <Carousel />
+          <Categories />
+          {console.log(products)}
+        </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 }
 

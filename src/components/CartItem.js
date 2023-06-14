@@ -8,7 +8,6 @@ function CartItem({ id, quantity }) {
   const { removeCartItem } = useShoppingCart();
   const PRODUCTS_DATA = useProductsData();
   const ITEM = PRODUCTS_DATA.find((item) => item.id === id);
-  console.log(ITEM);
   if (ITEM == null) return null;
 
   const PRICE = useMemo(() => {

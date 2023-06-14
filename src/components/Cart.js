@@ -6,7 +6,13 @@ import CartItem from "./CartItem";
 function Cart() {
   const { cart, isOpen } = useShoppingCart();
   return (
-    <div className="cart" style={{ visibility: isOpen ? "visible" : "hidden" }}>
+    <div
+      className="cart"
+      style={{
+        visibility: isOpen ? "visible" : "hidden",
+        width: isOpen ? "95%" : "0",
+      }}
+    >
       <h3>Cart</h3>
       <hr />
       {cart.map((item) => (
