@@ -1,0 +1,42 @@
+.product-preview {
+    position: relative;
+}
+
+.product-preview > img {
+    height: 18.75rem;
+    width: 100%;
+}
+.next, .previous {
+    height: 1rem;
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 45%;
+    background-color: var(--Light-grayish-blue);
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0px 1px 1px var(--Black-lightbox-background);
+    cursor: pointer;
+}
+.product-preview > .next {
+    right: 3%;
+}
+
+.next > img {
+    margin-left: .3rem;
+}
+
+.product-preview > .previous {
+    left: 3%;
+}
+
+.previous > img {
+    margin-right: .3rem;
+}
+
+.next > img, .previous > img {
+        height: .75rem;
+        width: .67rem;
+    }

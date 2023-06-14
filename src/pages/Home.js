@@ -8,7 +8,7 @@ function Home({}) {
   return (
     <div className="home">
       <Carousel />
-      <Categories />
+      {/* <Categories /> */}
       {console.log(products)}
     </div>
   );

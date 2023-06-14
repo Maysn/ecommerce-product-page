@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useMemo } from "react";
-import "../styles/carousel.css";
+import "../styles/Carousel.css";
 import next from "../assets/icon-next.svg";
 import previous from "../assets/icon-previous.svg";
 import { useProductsData } from "../context/ProductsDataContext";
 
-const CAROUSEL_TICKER = 3000;
+const CAROUSEL_TICKER = 5000;
 
 export function Carousel(props) {
   const productsData = useProductsData();
