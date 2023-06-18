@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
-import NoPage from "./pages/NoPage";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { ProductsDataProvider } from "./context/ProductsDataContext";
+import Header from "./components/Header";
+import Home from "./pages/Home";
 import FullCollection from "./pages/FullCollection";
 import Category from "./pages/Category";
-import Header from "./components/Header";
-import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import Checkout from "./pages/Checkout";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="collection" element={<FullCollection />} />
+          <Route path="checkout" element={<Checkout />} />
           <Route
             path="fragrances"
             element={<Category requiredCategory={"fragrances"} />}

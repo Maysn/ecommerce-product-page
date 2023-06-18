@@ -1,8 +1,6 @@
-import React, { useMemo } from "react";
 import { useProductsData } from "../context/ProductsDataContext";
-import { formatCurrency } from "../utilities/formatCurrency";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import { priceAfterDiscount } from "../utilities/priceAfterDiscount";
+import { calcItemPrice, calcItemTotal } from "../prices/cartPrices";
 
 function CartItem({ id, quantity }) {
   const { removeCartItem } = useShoppingCart();
@@ -10,17 +8,12 @@ function CartItem({ id, quantity }) {
   const ITEM = PRODUCTS_DATA.find((item) => item.id === id);
   if (ITEM == null) return null;
 
-  const PRICE = useMemo(() => {
-    return formatCurrency(
-      priceAfterDiscount(ITEM.price, ITEM.discountPercentage)
-    );
-  }, [PRODUCTS_DATA]);
-  const TOTAL_PRICE = useMemo(() => {
-    return formatCurrency(
-      priceAfterDiscount(ITEM.price, ITEM.discountPercentage) * quantity
-    );
-  }, [quantity]);
-
+  const itemPrice = calcItemPrice(ITEM.price, ITEM.discountPercentage);
+  const itemTotal = calcItemTotal(
+    ITEM.price,
+    ITEM.discountPercentage,
+    quantity
+  );
   return (
     <div className="cart_item">
       <div className="item_info">
@@ -30,8 +23,8 @@ function CartItem({ id, quantity }) {
         <div className="item_price">
           <p>{ITEM.title}</p>
           <span>
-            {`${PRICE} x ${quantity} `}{" "}
-            <span className="total_price">{TOTAL_PRICE}</span>
+            {`${itemPrice} x ${quantity} `}{" "}
+            <span className="total_price">{itemTotal}</span>
           </span>
         </div>
       </div>

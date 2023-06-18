@@ -1,10 +1,11 @@
 import React from "react";
-import "../styles/Cart.css";
+import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import "../styles/Cart.css";
 import CartItem from "./CartItem";
 
 function Cart() {
-  const { cart, isOpen } = useShoppingCart();
+  const { cart, isOpen, toggleCart } = useShoppingCart();
   return (
     <div
       className="cart"
@@ -18,7 +19,9 @@ function Cart() {
         <CartItem key={item.id} {...item} />
       ))}
       {cart.length > 0 ? (
-        <div className="checkout">Checkout</div>
+        <Link to="checkout" className="checkout" onClick={toggleCart}>
+          Checkout
+        </Link>
       ) : (
         <p className="empty_card">Your cart is empty</p>
       )}

@@ -29,7 +29,6 @@
     margin: 1rem;
 }
 .checkout {
-    
     display: flex;
     justify-content: center;
     height: 40px;
@@ -42,6 +41,7 @@
     border-radius: 7px;
     background-color: var(--Orange);
     color: var(--main-background);
+    text-decoration: none;
     box-shadow: 0px 1px 3px var(--Black-lightbox-background);
 }
 
