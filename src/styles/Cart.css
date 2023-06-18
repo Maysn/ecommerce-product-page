@@ -1,19 +1,23 @@
 .cart {
     position: absolute;
-    top: 12.35rem;
+    top: 14em;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 0;
-    height: 251px;
+    width: 90%;
+    height: 281px;
     z-index: 10;
-    background-color: white;
+    background-color: var(--main-background);
     border-radius: 3%;
     padding: 0 1rem;
     box-shadow: 0px 0px 2px black;
     overflow-y: auto;
     visibility: hidden ;
-    transition: width .3s ease-in-out;
     box-shadow: 0px 1px 3px var(--Black-lightbox-background);
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.cart::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 .cart hr {
     height: 1px;
@@ -24,13 +28,15 @@
     margin: 1rem;
 }
 .checkout {
+    
     display: flex;
     justify-content: center;
-    width: 93%;
+    height: 40px;
+    width: 40%;
     align-items: center;
     text-align: center;
     font-weight: 700;
-    margin: 1.55rem auto;
+    margin: 2rem auto;
     padding: 1rem;
     border-radius: 7px;
     background-color: var(--Orange);
@@ -42,7 +48,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    margin: 1.3rem 0;
     padding: 0 1rem;
 }
 .item_info {
@@ -52,12 +58,13 @@
     margin-right: 1rem;
 }
 
-.cart_item > img {
-    height: 50px;
-    max-width: 50px;
+.item_img  img {
+    height: 30px;
+    max-width: 30px;
     border-radius: 5px;
 }
 .item_price {
+    font-size: .9rem;
     color: var(--Dark-grayish-blue);
 }
 .total_price {
@@ -69,4 +76,31 @@
     font-weight: 700;
     text-align: center;
     color: var(--Dark-grayish-blue);
+}
+@media only screen and (min-width: 600px) {
+    .cart {
+        width: 60%;
+        top: 14.5rem;
+        left: 63%;
+    }
+    .checkout {
+        position: relative;
+        margin: auto;
+        margin-top: 3rem;
+        bottom: 11px;
+    }
+    .item_price {
+        font-size: .9rem;
+    }
+    .cart_item {
+        margin-bottom: 1.5rem;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    .cart {
+        width: 40%;
+        top: 15rem;
+        height: 300px;
+        left: 74%;
+    }
 }

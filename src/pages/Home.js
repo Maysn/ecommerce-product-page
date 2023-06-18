@@ -1,4 +1,4 @@
-import "../styles/home.css";
+import "../styles/Home.css";
 import { Carousel } from "../components/Carousel";
 import { useProductsData } from "../context/ProductsDataContext";
 import Categories from "../components/Categories";
@@ -10,7 +10,7 @@ function Home({}) {
       {products ? (
         <div className="home">
           <Carousel />
-          <Categories />
+          {/* <Categories /> */}
           {console.log(products)}
         </div>
       ) : (

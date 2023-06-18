@@ -10,7 +10,6 @@ function Cart() {
       className="cart"
       style={{
         visibility: isOpen ? "visible" : "hidden",
-        width: isOpen ? "95%" : "0",
       }}
     >
       <h3>Cart</h3>

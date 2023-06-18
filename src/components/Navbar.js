@@ -5,8 +5,8 @@ import hamburgerClose from "../assets/icon-close.svg";
 import logo from "../assets/logo.svg";
 import cartIcon from "../assets/icon-cart.svg";
 import avatar from "../assets/image-avatar.png";
-import DesktopLinks from "./DesktopLinks";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import NavLinks from "./NavLinks";
 function Navbar({ toggleMenu, setToggleMenu }) {
   const { toggleCart, cartQuantity } = useShoppingCart();
   return (
@@ -18,15 +18,10 @@ function Navbar({ toggleMenu, setToggleMenu }) {
           className="hamburger"
           onClick={() => setToggleMenu((curr) => !curr)}
         />
-        <img
-          style={{ backgroundColor: "white" }}
-          src={logo}
-          alt="Logo"
-          className="logo"
-        />
+        <img src={logo} alt="Logo" className="logo" />
+        <NavLinks />
       </div>
-      <DesktopLinks />
-      <div className="right-side">
+      <div className="nav-right-side">
         <div className="cart_icon">
           <img
             src={cartIcon}

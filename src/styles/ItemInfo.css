@@ -1,0 +1,18 @@
+.item-info {
+    margin-left: 1rem;
+}
+.item-brand {
+    color: var(--Orange);
+    font-weight: 700;
+    font-size: .7rem;
+    margin-bottom: .55rem;
+}
+.item-title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+@media only screen and (min-width: 600px) {
+    .item-title {
+        font-size: 1.1rem;
+    }
+}
