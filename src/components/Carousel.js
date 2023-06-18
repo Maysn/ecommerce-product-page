@@ -16,22 +16,22 @@ const CAROUSEL_TICKER = 5000;
 
 export function Carousel() {
   const { getItemQuantity } = useShoppingCart();
-  const [currItem, setCurrItem] = useState(5);
+  const [currItem, setCurrItem] = useState(0);
   const [currImg, setCurrImg] = useState(0);
   const productsData = useProductsData();
   const CAROUSEL_DATA = productsData?.[currItem];
   const quantity = getItemQuantity(CAROUSEL_DATA.id);
 
-  // useEffect(() => {
-  //   const interval = setTimeout(() => {
-  //     setCurrImg(0);
-  //     setCurrItem((curr) => (curr === 29 ? 0 : curr + 1));
-  //   }, CAROUSEL_TICKER);
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      setCurrImg(0);
+      setCurrItem((curr) => (curr === 29 ? 0 : curr + 1));
+    }, CAROUSEL_TICKER);
 
-  //   return () => {
-  //     clearTimeout(interval);
-  //   };
-  // }, [currItem]);
+    return () => {
+      clearTimeout(interval);
+    };
+  }, [currItem]);
   const showNext = (current) => {
     if (current === 29) {
       return setCurrItem(0);

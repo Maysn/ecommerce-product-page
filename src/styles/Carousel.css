@@ -36,7 +36,7 @@
 }
 .main_view > img {
     height: 250px;
-    width: 250px;
+    width: 300px;
     object-fit: contain;
     border-radius: 9px;
     box-shadow: 0px 1px 3px var(--Dark-grayish-blue);
