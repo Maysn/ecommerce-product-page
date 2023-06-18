@@ -128,14 +128,14 @@ export function Carousel() {
           </div>
         </div>
         <div className="home_item_buttons">
-          <QuantityInCart id={CAROUSEL_DATA.id} />
+          <QuantityInCart
+            id={CAROUSEL_DATA.id}
+            className="home_quantity_in_cart"
+          />
           {quantity === 0 ? (
-            <AddToCart id={CAROUSEL_DATA.id} className={"home_btn_width"} />
+            <AddToCart id={CAROUSEL_DATA.id} className="home_btn_width" />
           ) : (
-            <RemoveFromCart
-              id={CAROUSEL_DATA.id}
-              className={"home_btn_width"}
-            />
+            <RemoveFromCart id={CAROUSEL_DATA.id} className="home_btn_width" />
           )}
         </div>
       </div>
