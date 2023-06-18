@@ -9,7 +9,7 @@ function Category({ requiredCategory }) {
     return Arr;
   }, []);
 
-  return <Collection list={ITEMS_ARRAY} />;
+  return PRODUCTS_DATA ? <Collection list={ITEMS_ARRAY} /> : "";
 }
 
 export default Category;
