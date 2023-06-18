@@ -8,9 +8,9 @@ function CategoriesItem({ item }) {
     return CAPITALIZE_WORDS(item);
   }, [CAPITALIZE_WORDS]);
   return (
-    <span className="categories-item">
-      <Link to={`${item}`}>{CATEGORY_ITEM}</Link>
-    </span>
+    <Link to={`${item}`} className="categories-item">
+      <span>{CATEGORY_ITEM}</span>
+    </Link>
   );
 }
 

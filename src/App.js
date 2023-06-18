@@ -33,12 +33,12 @@ function App() {
             element={<Category requiredCategory={"laptops"} />}
           />
           <Route
-            path="skincare"
-            element={<Category requiredCategory={"skincare"} />}
-          />
-          <Route
             path="smartphones"
             element={<Category requiredCategory={"smartphones"} />}
+          />
+          <Route
+            path="skincare"
+            element={<Category requiredCategory={"skincare"} />}
           />
           <Route path="*" element={<NoPage />} />
         </Routes>

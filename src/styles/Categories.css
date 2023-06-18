@@ -17,7 +17,12 @@
     background-color: var(--Orange);
     box-shadow: 1px 2px 3px var(--Black-lightbox-background);
 }
-.categories-item > a {
+.categories-item {
     text-decoration: none;
     color: var(--Black-lightbox-background);
+}
+@media only screen and (min-width: 1200px) {
+    .categories-list {
+        margin: 5rem;
+    }
 }

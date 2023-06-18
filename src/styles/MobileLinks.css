@@ -1,26 +1,46 @@
 .mobile-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     height: 100%; 
     background-color: var(--main-background);
     position: fixed;
     z-index: 13; 
     top: 0; 
     left: 0; 
+    list-style: none;
     overflow-x: hidden;
     padding-top: 60px; 
     transition: 0.5s;
-    /* background-image: repeating-linear-gradient(-45deg, black, black 19px, purple 20px, purple 0px); */
 }
-.mobile-links > span {
-    margin: .75rem 1.75rem;
-}
-.mobile-links > span:first-child {
-    margin-top: 3rem;
-}
+    .mobile-links > li {
+        margin: .75rem 1.75rem;
+    }
+    .mobile-links > li:first-child {
+        margin-top: 3rem;
+    }
 .mobile-links a {
+    display: flex;
+    justify-content: space-between;
     text-decoration: none;
     color: var(--black-lightbox-background);
     font-weight: 700;
+}
+.submenu {
+    background-color: var(--main-background);
+    list-style-type: none;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: height .3s ease-out, visibility .3s ease-out;
+}
+.show_submenu {
+    height: 200px;
+    visibility: visible;
+    transition: height .3s ease-in, visibility .3s ease-in;
+}
+.submenu  li {
+    margin: .75rem;
+    background-color: var(--Pale-orange);
+}
+.submenu li a {
+    display: block;
+    padding-top: 1px;
 }

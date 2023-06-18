@@ -1,16 +1,23 @@
 .collection {
     display: flex;
     flex-direction: column;
-    margin: 1rem 1.25rem;
+    margin: 1rem auto;
+    width: 85%;
 }
 
 @media only screen and (min-width: 600px) {
     .collection {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
-        grid-gap: 1.35rem;
+        grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+        grid-gap: 1rem;
     }
 }
-
+@media only screen and (min-width: 1200px) {
+    .collection {
+        width: 60%;
+        margin: auto;
+        margin-top: 3rem;
+    }
+}
 /* for-desktop */
 /* min-width: 768px */
