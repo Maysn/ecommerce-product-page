@@ -29,7 +29,7 @@ function Checkout() {
   console.log(TOTAL);
   return (
     <div className="checkout_list">
-      <h2>Summary</h2>
+      <h3>Summary</h3>
       {cart.map((item) => (
         <CheckoutItem key={item.id} {...item} />
       ))}

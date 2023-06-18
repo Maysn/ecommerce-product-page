@@ -67,7 +67,7 @@
 .proceed_to_payment:hover {
     opacity: .7;
 }
-.hr {
+hr {
     width: 90%;
-    margin: auto;
+    margin: 0 auto;
 }
