@@ -3,12 +3,14 @@ import "../styles/Collection.css";
 import StoreItem from "./StoreItem";
 
 function Collection({ list }) {
-  return (
+  return list ? (
     <div className="collection">
       {list?.map((item) => (
         <StoreItem key={item.id} {...item} />
       ))}
     </div>
+  ) : (
+    ""
   );
 }
 
