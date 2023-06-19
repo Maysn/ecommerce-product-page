@@ -60,6 +60,7 @@ export function ShoppingCartProvider({ children }) {
         increaseItemQuantity,
         decreaseItemQuantity,
         removeCartItem,
+        setIsOpen,
         isOpen,
         cart,
         cartQuantity,

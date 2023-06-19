@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import "../styles/Cart.css";
 import CartItem from "./CartItem";
 
 function Cart() {
-  const { cart, isOpen, toggleCart } = useShoppingCart();
+  const { cart, isOpen, toggleCart, setIsOpen } = useShoppingCart();
+  useEffect(() => {
+    cart.length === 0 ? setIsOpen(false) : "";
+  }, [cart]);
   return (
     <div
       className="cart"
