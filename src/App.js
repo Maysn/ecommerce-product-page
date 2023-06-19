@@ -1,9 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
-import {
-  ShoppingCartProvider,
-  useShoppingCart,
-} from "./context/ShoppingCartContext";
+import { useShoppingCart } from "./context/ShoppingCartContext";
 import { ProductsDataProvider } from "./context/ProductsDataContext";
 import Header from "./components/Header";
 import Home from "./pages/Home";

@@ -21,7 +21,7 @@ function MagnifiedView({
         className="magnified_img"
       />
       {CAROUSEL_DATA.images[1] ? (
-        <div className="other_images">
+        <div className="other_images magnified_other_imgs">
           <span
             className={`mini_preview ${
               currImg === 0 ? "mini_preview_focus" : ""
