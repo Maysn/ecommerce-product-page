@@ -175,7 +175,8 @@
     flex-direction: column;
     background: rgba(0,0,0,.93);
     z-index: 300;
-    pointer-events: none;
+    cursor: default;
+    /* pointer-events: none; */
 }
 .magnified_view > img {
     height: 300px;
@@ -194,7 +195,7 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--Grayish-blue);
-    pointer-events: all;
+    /* pointer-events: all; */
     cursor: pointer
 }
 @media only screen and (min-width: 600px) {
@@ -203,7 +204,7 @@
     }
 }
 .magnified_other_imgs {
-    pointer-events: all;
+    /* pointer-events: all; */
 }
 .margin_top {
     margin-top: 4rem;
