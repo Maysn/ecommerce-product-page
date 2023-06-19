@@ -1,10 +1,10 @@
 import React from "react";
 import "../styles/Layout.css";
 
-function Layout({ toggleMenu, setToggleMenu }) {
+function MobileLayout({ toggleMenu, setToggleMenu }) {
   return (
     <div
-      className="layout"
+      className="mobile_layout"
       style={{
         width: toggleMenu ? "100%" : "0",
         opacity: toggleMenu ? ".7" : "0",
@@ -14,4 +14,4 @@ function Layout({ toggleMenu, setToggleMenu }) {
   );
 }
 
-export default Layout;
+export default MobileLayout;

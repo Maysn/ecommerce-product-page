@@ -5,7 +5,7 @@ import { calcItemPrice, calcItemTotal } from "../prices/cartPrices";
 function CartItem({ id, quantity }) {
   const { removeCartItem } = useShoppingCart();
   const PRODUCTS_DATA = useProductsData();
-  const ITEM = PRODUCTS_DATA.find((item) => item.id === id);
+  const ITEM = PRODUCTS_DATA?.find((item) => item.id === id);
   if (ITEM == null) return null;
 
   const itemPrice = calcItemPrice(ITEM.price, ITEM.discountPercentage);

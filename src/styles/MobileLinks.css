@@ -2,7 +2,7 @@
     height: 100%; 
     background-color: var(--main-background);
     position: fixed;
-    z-index: 13; 
+    z-index: 200; 
     top: 0; 
     left: 0; 
     list-style: none;

@@ -27,6 +27,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
+    cursor: pointer;
 }
 @media only screen and (min-width: 992px) {
     .product_images {
@@ -37,7 +38,7 @@
 .main_view > img {
     height: 250px;
     width: 300px;
-    object-fit: contain;
+    object-fit: fill;
     border-radius: 9px;
     box-shadow: 0px 1px 3px var(--Dark-grayish-blue);
 }
@@ -53,17 +54,18 @@
     gap: 1.5rem;
 }
 .mini_preview {
+    display: none;
     height: 40px;
     width: 40px;
     border-radius: 9px;
     transition: all .3s ease-in-out;
-    display: none;
+    cursor: pointer;
 }
 @media only screen and (min-width: 768px) {
     .mini_preview {
+        display: block;
         height: 60px;
         width: 60px;
-        display: block;
     }
 }
 .mini_preview_focus {
@@ -112,6 +114,7 @@
 }
 .item_ {
     min-height: 190px;
+    width: 90%;
     margin: 1rem;
     padding: 1rem;
 }
@@ -163,4 +166,35 @@
     .home_price {
         flex-direction: column;
     }
+}
+.magnified_view {
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0,0,0,.93);
+    z-index: 300;
+}
+.magnified_view > img {
+    height: 300px;
+    margin-bottom: 2rem;
+    cursor: default;
+}
+@media only screen and (min-width: 768px) {
+    .magnified_view > img {
+        height: 450px;
+    }
+}
+.close_magnified_view {
+    position: relative;
+    left: 25%;
+    bottom: 5%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--Grayish-blue);
+    cursor: pointer
+}
+.margin_top {
+    margin-top: 4rem;
 }

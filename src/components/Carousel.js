@@ -11,6 +11,7 @@ import OldPrice from "./OldPrice";
 import QuantityInCart from "./QuantityInCart";
 import AddToCart from "./AddToCart";
 import RemoveFromCart from "./RemoveFromCart";
+import MagnifiedView from "./MagnifiedView";
 
 const CAROUSEL_TICKER = 5000;
 
@@ -18,20 +19,21 @@ export function Carousel() {
   const { getItemQuantity } = useShoppingCart();
   const [currItem, setCurrItem] = useState(0);
   const [currImg, setCurrImg] = useState(0);
+  const [showMagnifiedView, setShowMagnifiedView] = useState(false);
   const productsData = useProductsData();
   const CAROUSEL_DATA = productsData?.[currItem];
   const quantity = getItemQuantity(CAROUSEL_DATA.id);
 
-  useEffect(() => {
-    const interval = setTimeout(() => {
-      setCurrImg(0);
-      setCurrItem((curr) => (curr === 29 ? 0 : curr + 1));
-    }, CAROUSEL_TICKER);
+  // useEffect(() => {
+  //   const interval = setTimeout(() => {
+  //     setCurrImg(0);
+  //     setCurrItem((curr) => (curr === 29 ? 0 : curr + 1));
+  //   }, CAROUSEL_TICKER);
 
-    return () => {
-      clearTimeout(interval);
-    };
-  }, [currItem]);
+  //   return () => {
+  //     clearTimeout(interval);
+  //   };
+  // }, [currItem]);
   const showNext = (current) => {
     if (current === 29) {
       return setCurrItem(0);
@@ -54,7 +56,11 @@ export function Carousel() {
           <span className="previous" onClick={() => showPrevious(currItem)}>
             <img src={previous} alt="previous image" />
           </span>
-          <img src={CAROUSEL_DATA.images[currImg]} alt="product preview" />
+          <img
+            src={CAROUSEL_DATA.images[currImg]}
+            alt="product preview"
+            onClick={() => setShowMagnifiedView((curr) => !curr)}
+          />
           <span className="next" onClick={() => showNext(currItem)}>
             <img src={next} alt="next image" />
           </span>
@@ -139,6 +145,20 @@ export function Carousel() {
           )}
         </div>
       </div>
+      {showMagnifiedView ? (
+        <MagnifiedView
+          currImg={currImg}
+          currItem={currItem}
+          CAROUSEL_DATA={CAROUSEL_DATA}
+          switchPreview={switchPreview}
+          MagnifiedView={showMagnifiedView}
+          setShowMagnifiedView={setShowMagnifiedView}
+          showPrevious={showPrevious}
+          showNext={showNext}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }
