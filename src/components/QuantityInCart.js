@@ -10,7 +10,7 @@ function QuantityInCart({ id, className = "" }) {
   const quantity = getItemQuantity(id);
 
   return (
-    <div className={`quantity-in-cart ${className}`}>
+    <div className={`quantity-in-cart noSelect ${className}`}>
       <span onClick={() => decreaseItemQuantity(id)}>
         <img src={iconMinus} alt="remove one unit" />
       </span>

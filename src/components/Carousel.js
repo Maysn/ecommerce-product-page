@@ -52,7 +52,7 @@ export function Carousel() {
   return (
     <div className="product_preview">
       <div className="product_images">
-        <div className="main_view">
+        <div className="main_view noSelect">
           <span className="previous" onClick={() => showPrevious(currItem)}>
             <img src={previous} alt="previous image" />
           </span>

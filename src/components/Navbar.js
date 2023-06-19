@@ -22,7 +22,7 @@ function Navbar({ toggleMenu, setToggleMenu }) {
         <NavLinks />
       </div>
       <div className="nav-right-side">
-        <div className="cart_icon">
+        <div className="cart_icon noSelect">
           <img
             src={cartIcon}
             alt="user cart"
