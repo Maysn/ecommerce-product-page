@@ -10,7 +10,7 @@ function Collection({ list }) {
       ))}
     </div>
   ) : (
-    ""
+    <div className="loading">LOADING</div>
   );
 }
 
