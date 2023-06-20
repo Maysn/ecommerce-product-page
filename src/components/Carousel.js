@@ -24,16 +24,20 @@ export function Carousel() {
   const CAROUSEL_DATA = productsData?.[currItem];
   const quantity = getItemQuantity(CAROUSEL_DATA.id);
 
-  // useEffect(() => {
-  //   const interval = setTimeout(() => {
-  //     setCurrImg(0);
-  //     setCurrItem((curr) => (curr === 29 ? 0 : curr + 1));
-  //   }, CAROUSEL_TICKER);
+  useEffect(() => {
+    if (!showMagnifiedView) {
+      const interval = setTimeout(() => {
+        setCurrImg(0);
+        setCurrItem((curr) => (curr === 29 ? 0 : curr + 1));
+      }, CAROUSEL_TICKER);
 
-  //   return () => {
-  //     clearTimeout(interval);
-  //   };
-  // }, [currItem]);
+      return () => {
+        clearTimeout(interval);
+      };
+    }
+    return;
+  }, [currItem, showMagnifiedView]);
+
   const showNext = (current) => {
     if (current === 29) {
       return setCurrItem(0);
