@@ -10,8 +10,6 @@ function Home({}) {
       {products ? (
         <div className="home">
           <Carousel />
-          {/* <Categories /> */}
-          {console.log(products)}
         </div>
       ) : (
         ""
